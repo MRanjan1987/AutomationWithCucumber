@@ -1,5 +1,6 @@
 package webFunctions;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -42,4 +43,33 @@ public class ActionsEvent extends BasePage {
 		doAction.perform();
 	}
 
+	public void selectAllByMouse() {
+
+		doAction = action.keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).build();
+		doAction.perform();
+	}
+
+	public void copyByMouse() {
+
+		doAction = action.keyDown(Keys.CONTROL).sendKeys("C").keyUp(Keys.CONTROL).build();
+		doAction.perform();
+	}
+
+	public void tabByMouse() {
+
+		doAction = action.keyDown(Keys.TAB).keyUp(Keys.TAB).build();
+		doAction.perform();
+	}
+
+	public void pasteByMouse() {
+
+		doAction = action.keyDown(Keys.CONTROL).sendKeys("V").keyUp(Keys.CONTROL).build();
+		doAction.perform();
+	}
+
+	public void EnterByMouse() {
+
+		doAction = action.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build();
+		doAction.perform();
+	}
 }
