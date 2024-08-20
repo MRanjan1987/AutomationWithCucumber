@@ -1,4 +1,4 @@
-package webFunctions;
+package utils;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 
 import pages.BasePage;
 
-public class ActionsEvent extends BasePage {
+public class ActionsClassUtility extends BasePage {
 	private Actions action;
 	private Action doAction;
 
-	public ActionsEvent(WebDriver driver) {
+	public ActionsClassUtility(WebDriver driver) {
 		super(driver);
 		action = new Actions(driver);
 

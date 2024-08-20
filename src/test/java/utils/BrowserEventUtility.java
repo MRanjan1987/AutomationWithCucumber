@@ -1,13 +1,13 @@
-package webFunctions;
+package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 
 import pages.BasePage;
 
-public class BrowserEvent extends BasePage {
+public class BrowserEventUtility extends BasePage {
 
-	public BrowserEvent(WebDriver driver) {
+	public BrowserEventUtility(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
