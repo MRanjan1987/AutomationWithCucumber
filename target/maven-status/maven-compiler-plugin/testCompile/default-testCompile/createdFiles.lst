@@ -5,6 +5,7 @@ stepDefinitions\LoginSteps.class
 pages\LoginPage.class
 pages\rough.class
 utils\DataDriven.class
+webFunctions\ActionsEvent.class
 utils\ScreenshotUtils.class
 stepDefinitions\PracticeFormSteps.class
 runner\TestRunner.class
