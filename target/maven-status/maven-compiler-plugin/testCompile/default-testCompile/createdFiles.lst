@@ -1,6 +1,11 @@
-stepDefinitions\CucumberHooks.class
+utils\ExcelUtils.class
+pages\BasePage.class
+pages\PracticeFormPage.class
 stepDefinitions\LoginSteps.class
 pages\LoginPage.class
+pages\rough.class
+utils\DataDriven.class
 utils\ScreenshotUtils.class
+stepDefinitions\PracticeFormSteps.class
 runner\TestRunner.class
 utils\WebDriverUtils.class

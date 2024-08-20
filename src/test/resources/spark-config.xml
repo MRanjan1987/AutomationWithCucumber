@@ -1,0 +1,9 @@
+<extentreports>
+	<configuration>
+		<reportName>Automation Test Report</reportName>
+		<documentTitle>Test Report</documentTitle>
+		<theme>dark</theme>
+		<encoding>utf-8</encoding>
+		<protocol>https</protocol>
+	</configuration>
+</extentreports>

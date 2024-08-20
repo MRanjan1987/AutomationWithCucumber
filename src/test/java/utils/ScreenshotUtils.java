@@ -25,7 +25,8 @@ public class ScreenshotUtils {
 		// Take the screenshot
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		String destinationDir = "target/screenshots/";
+		//String destinationDir = "target/screenshots/";
+		String destinationDir = "target/cucumber-reports/";
 		String destination = destinationDir + screenshotName + ".png";
 
 		// Create the directory if it doesn't exist
