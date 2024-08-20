@@ -44,8 +44,21 @@ public class JSEvent extends BasePage {
 		js.executeScript("arguments[0].click();", element);
 	}
 
-	public void scrollPageByPixel() {
+	public void Scroll_by_a_certain_amount_Horizontally() {
 		js.executeScript("window.scrollBy(0,1500)", "");
-		
+
 	}
+
+	public void Scroll_to_a_specific_element(WebElement element) {
+
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+	}
+
+	public void Scroll_to_the_bottom_of_the_page() {
+
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+	}
+
 }
