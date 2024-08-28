@@ -39,7 +39,7 @@ public class PracticeFormSteps {
 		practiceform.enterAddress(addr);
 	}
 
-	@Then("Verify gthe success message")
+	@Then("Verify the success message")
 	public void verify_gthe_success_message() {
 
 		System.out.println("Form submitted");
