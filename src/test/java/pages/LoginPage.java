@@ -20,7 +20,7 @@ public class LoginPage extends BasePage {
 
 	// WebDriver driver;
 
-	@FindBy(xpath = "//input[@id='username']")
+	@FindBy(xpath = "//input[@id='usernam']")
 	WebElement usernameField;
 
 	@FindBy(xpath = "//input[@id='password']")
