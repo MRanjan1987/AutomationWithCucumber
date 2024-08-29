@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ScreenshotUtils {
 
-	public static String takeScreenshot(WebDriver driver, String screenshotName) {
+	public static String[] takeScreenshot(WebDriver driver, String screenshotName) {
 		// Wait for the page to fully load
 		new WebDriverWait(driver, Duration.ofSeconds(10)).until(webDriver -> ((JavascriptExecutor) webDriver)
 				.executeScript("return document.readyState").equals("complete"));
@@ -25,9 +25,10 @@ public class ScreenshotUtils {
 		// Take the screenshot
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		//String destinationDir = "target/screenshots/";
+		// String destinationDir = "target/screenshots/";
 		String destinationDir = "target/cucumber-reports/";
-		String destination = destinationDir + screenshotName + ".png";
+		String destinationFile = screenshotName + ".png";
+		String destination = destinationDir + destinationFile;
 
 		// Create the directory if it doesn't exist
 		File directory = new File(destinationDir);
@@ -40,7 +41,25 @@ public class ScreenshotUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return destination;
+
+		// Spark Report
+		String destinationDirSpark = "D:\\AutomationWorkspace\\Automation_Cucumber_BDD\\target\\SparkReport\\ExtentReport\\";
+		String destinationFileSpark = screenshotName + ".png";
+		String destinationSpark = destinationDirSpark + destinationFileSpark;
+
+		// Create the directory if it doesn't exist
+		directory = new File(destinationDirSpark);
+		if (!directory.exists()) {
+			directory.mkdirs();
+		}
+
+		try {
+			FileHandler.copy(source, new File(destinationSpark));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// Return the relative path to the screenshot
+		return new String[] { destination, destinationSpark };
 	}
 
 	// Method to scroll to a specific element before taking a screenshot

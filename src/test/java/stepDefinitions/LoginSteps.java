@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -27,6 +28,12 @@ import utils.DataDriven;
 import utils.ScreenshotUtils;
 
 public class LoginSteps {
+	public LoginSteps() {
+		// Retrieve the WebDriver instance from Hooks
+		this.driver = Hooks.getDriver();
+		PageFactory.initElements(driver, this);
+	}
+
 	WebDriver driver;
 	LoginPage loginPage;
 
@@ -34,9 +41,6 @@ public class LoginSteps {
 
 	@Given("User is on login page {string}")
 	public void user_is_on_login_page(String url) {
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
 		driver.get(url);
 		loginPage = new LoginPage(driver);
 
@@ -44,7 +48,7 @@ public class LoginSteps {
 
 	@Test(dataProvider = "loginData", dataProviderClass = DataDriven.class)
 	@When("User enters {string} and {string}")
-	public void user_enters_username_and_password(String username, String password){
+	public void user_enters_username_and_password(String username, String password) {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 

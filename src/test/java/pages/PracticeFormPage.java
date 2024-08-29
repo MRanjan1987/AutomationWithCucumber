@@ -15,7 +15,7 @@ public class PracticeFormPage extends BasePage {
 	WebElement username;
 	@FindBy(xpath = "//input[@id='email']")
 	WebElement email;
-	@FindBy(xpath = "//input[@id='phone']")
+	@FindBy(xpath = "//input[@id='phon']")
 	WebElement phone;
 	@FindBy(xpath = "//textarea[@id='textarea']")
 	WebElement address;
